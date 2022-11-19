@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>
+            Student | Update My Info
+        </title>
+    </head>
+    <body>
+        <!-- studentData = {{userData}} -->
+        <!-- updte my info -->
+        <form id="updateMyInfo" method="POST" action="/student/updetemyinfo#">
+            <!-- <label for="firstName">First name </label> -->
+            <input type="text" name = "firstName" placeholder="First name"/>
+            <input type="text" name = "middleName" placeholder="Middle name"/>
+            <input type="text" name = "lastName" placeholder="Last name"/>
+            <input type="text" name = "Batch" placeholder="2020"/>
+            <input type="text" name = "PhoneNumber" placeholder="9999999999"/>
+            <input type="text" name = "Email" placeholder="xyz@gmail.com"/>
+            <input type="text" name = "uid" style="display:none" value="{{id}}" />
+            <button type = "submit" >save</button>
+            <button type = "button" onclick="history.back(); return false;">cancel</button>
+        </form>
+    </body>
+</html>

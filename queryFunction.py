@@ -24,7 +24,8 @@ def insertStudent(sid,fname,mname,lname,sbatch,sphonenumber,smail):
 #assuming that the studentid is not going to be update.
 # But his/her firstname,lastname,middlename,phonenumber,email, batch can be updated!
 def updateStudent(sid,fname,mname,lname,sbatch,sphonenumber,smail):
-    cursor.execute("update student set firstname = "+fname+", middlename = "+mname+", lastname="+lname+", studentbatch = "+sbatch+", studentphonenumber = "+sphonenumber+", studentemail = "+smail+" where studentid = "+sid+" ")
+    cursor.execute("update student set firstname = '"+fname+"', middlename = '"+mname+"', lastname='"+lname+"', studentbatch = "+sbatch+", studentphonenumber = '"+sphonenumber+"', studentemail = '"+smail+"' where studentid = "+sid+" ")
+    conn.commit()
 
 #updation in faculty table
 #assuming that the facultyid is not going to be update.

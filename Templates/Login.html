@@ -6,6 +6,8 @@
             function showLogin(id){
                 var buttons=document.getElementById("buttons");
                 var login=document.getElementById("login");
+                var role = document.getElementById("role");
+                role.value = id;
                 buttons.style.display="none";
                 login.style.display="flex";
                 login.style.flexDirection="column";
@@ -26,10 +28,11 @@
             <button id="Student" onclick="showLogin(this.id)" style="margin: 10px;" >Login As Student</button>
         </div>
         <div id="login" style="display: none;">
-            <form action="/isUser" class="container" style="display: flex;flex-direction: column;align-items: center;">
+            <form action="/home" class="container" style="display: flex;flex-direction: column;align-items: center;">
                 <div style="display:flex;flex-direction:column">
-                    <input name="userid" style="margin:10px;" placeholder="UserId" />
-                    <input name="password" style="margin:10px;" placeholder="Password"/>
+                    <input type="hidden" name = "role" id="role" >
+                    <input name="userid" type = "text" style="margin:10px;" placeholder="UserId" />
+                    <!-- <input name="password" type = "password" style="margin:10px;" placeholder="Password"/> -->
                 </div>
                 <button type="submit">Submit</button>
             </form>
