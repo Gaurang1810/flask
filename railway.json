@@ -1,9 +1,12 @@
 {
-    "build": {
-      "builder": "pip"
-    },
-    "deploy": {
-      "restartPolicyType": "ON_FAILURE",
-      "restartPolicyMaxRetries": 10
-    }
+  "build": {
+    "builder": "nixpacks",
+    "buildCommand": "pip install -r requirnments.txt"
+  },
+  "deploy": {
+    "startCommand": "python main.py",
+    "healthcheckPath": "/",
+    "healthcheckTimeout": 100,
+    "restartPolicyType": "never"
   }
+}
