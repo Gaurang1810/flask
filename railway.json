@@ -1,6 +1,6 @@
 {
     "build": {
-      "builder": "NIXPACKS"
+      "builder": "pip"
     },
     "deploy": {
       "restartPolicyType": "ON_FAILURE",
