@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Flask app</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+        <script>
+            function showLogin(id){
+                var buttons=document.getElementById("buttons");
+                var login=document.getElementById("login");
+                buttons.style.display="none";
+                login.style.display="flex";
+                login.style.flexDirection="column";
+            }
+            function goback(){
+                var buttons=document.getElementById("buttons");
+                var login=document.getElementById("login");
+                buttons.style.display="flex";
+                login.style.display="none";
+            }
+        </script>
+    </head>
+    <body>
+        <h1 class="heading" style="text-align: center;">Student reward System</h1>
+        <div id="buttons" style="display: flex;flex-direction: column">
+            <button id="Teacher" onclick="showLogin(this.id)" style="margin: 10px;" >Login As Teacher</button>
+            <button id="TA" onclick="showLogin(this.id)" style="margin: 10px;" >Login As TA</button>
+            <button id="Student" onclick="showLogin(this.id)" style="margin: 10px;" >Login As Student</button>
+        </div>
+        <div id="login" style="display: none;">
+            <form action="/isUser" class="container" style="display: flex;flex-direction: column;align-items: center;">
+                <div style="display:flex;flex-direction:column">
+                    <input name="userid" style="margin:10px;" placeholder="UserId" />
+                    <input name="password" style="margin:10px;" placeholder="Password"/>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+            <button onclick="goback()">Go Back</button>
+        </div>
+    </body>
+</html>
