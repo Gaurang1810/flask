@@ -17,7 +17,7 @@ loginRole=""
 def index():
     cursor.execute("SELECT * FROM student")
     print(cursor.fetchone())
-    return render_template("login.html")
+    return render_template("Login.html")
 
 @app.route('/home',methods=['GET', 'POST'])
 def isUser():
