@@ -17,7 +17,7 @@ loginRole=""
 def index():
     cursor.execute("SELECT * FROM student")
     print(cursor.fetchone())
-    return render_template("login.html")
+    return render_template("Login.html")
 
 @app.route('/home',methods=['GET', 'POST'])
 def isUser():
@@ -62,4 +62,4 @@ def updateMyInfo():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=os.getenv("PORT", default=5000))
+    app.run(debug=False, port=os.getenv("PORT", default=5000))
