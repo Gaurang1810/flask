@@ -28,7 +28,7 @@
             <button id="Student" onclick="showLogin(this.id)" style="margin: 10px;" >Login As Student</button>
         </div>
         <div id="login" style="display: none;">
-            <form action="/home" class="container" style="display: flex;flex-direction: column;align-items: center;">
+            <form action="/home" class="container" style="display: flex;flex-direction: column;align-items: center;" metod="POST">
                 <div style="display:flex;flex-direction:column">
                     <input type="hidden" name = "role" id="role" >
                     <input name="userid" type = "text" style="margin:10px;" placeholder="UserId" />

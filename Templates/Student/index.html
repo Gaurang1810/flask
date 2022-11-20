@@ -12,9 +12,12 @@
 
         <div id="menu" >
             <a href='/student/updetemyinfo?id={{userData["id"]}}' >Update my info</a>
-            <button type = "button">View academic marks</button>
-            <button type = "button">View non-academic marks</button>
-            <button type = "button">See top 5 students</button>
+            <a href='/student/viewacademicmarks?id={{userData["id"]}}' >View academic marks</a>
+            <a href='/student/viewnonacademicmarks?id={{userData["id"]}}' >View nonacademic marks</a>
+            <a href='/student/viewntopfivestudents?id={{userData["id"]}}' >View top 5 students</a>
+            <!-- <button type = "button">View academic marks</button> -->
+            <!-- <button type = "button">View non-academic marks</button> -->
+            <!-- <button type = "button">See top 5 students</button> -->
         </div>
     </body>
 </html>
