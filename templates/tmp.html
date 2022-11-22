@@ -1,0 +1,69 @@
+<html>
+  <head>
+    <title>Flask app</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='styles/main.css') }}"
+    />
+    <script>
+      function showLogin(id) {
+        var buttons = document.getElementById("buttons");
+        var login = document.getElementById("login");
+        var role = document.getElementById("role");
+        role.value = id;
+        buttons.style.display = "none";
+        login.style.display = "flex";
+        login.style.flexDirection = "column";
+      }
+      function goback() {
+        var buttons = document.getElementById("buttons");
+        var login = document.getElementById("login");
+        buttons.style.display = "flex";
+        login.style.display = "none";
+      }
+    </script>
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <div id="maindiv">
+      <h1 class="heading" style="text-align: center">Student reward System</h1>
+      <div id="buttons" style="display: flex; flex-direction: column">
+        <button id="Teacher" onclick="showLogin(this.id)" style="margin: 10px">
+          Teacher
+        </button>
+        <button id="TA" onclick="showLogin(this.id)" style="margin: 10px">
+          TA
+        </button>
+        <button id="Student" onclick="showLogin(this.id)" style="margin: 10px">
+          Student
+        </button>
+        <button id="Admin" onclick="showLogin(this.id)" style="margin: 10px">
+          Admin
+        </button>
+      </div>
+      <div id="login" style="display: none">
+        <form
+          action="/home"
+          class="container"
+          style="display: flex; flex-direction: column; align-items: center"
+          metod="POST"
+        >
+          <div style="display: flex; flex-direction: column">
+            <input type="hidden" name="role" id="role" />
+            <input
+              name="userid"
+              type="text"
+              style="margin: 10px"
+              placeholder="UserId"
+            />
+            <!-- <input name="password" type = "password" style="margin:10px;" placeholder="Password"/> -->
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+        <button onclick="goback()">Return</button>
+      </div>
+    </div>
+  </body>
+</html>

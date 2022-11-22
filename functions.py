@@ -75,7 +75,7 @@ as
 $$
 declare 
 	exammarks double precision;
-	practicalMarks double precision;
+	practicalmarks double precision;
 	projectmarks double precision;
 	quizzesmarks double precision;
 	attendencemarks double precision;
@@ -87,13 +87,13 @@ BEGIN
 		return old;
 	else
 		select getmarks('exam') into exammarks;
-		select getmarks('practical') into practicalMarks;
+		select getmarks('practical') into practicalmarks;
 		select getmarks('project') into projectmarks;
 		select getmarks('quizzes') into quizzesmarks;
 		select getmarks('attendence') into attendencemarks;
 
 		exammarks := ((exammarks * new.exam)/100);
- 		practicalMarks:=((practicalMarks* new.practical)/100);
+ 		practicalmarks:=((practicalmarks* new.practical)/100);
  		projectmarks:=((projectmarks*new.project)/100) ;
 		quizzesmarks:=((quizzesmarks*new.quizzes)/100);
 		attendencemarks:=((attendencemarks*new.attendence)/100);
@@ -213,3 +213,5 @@ cursor.execute(sql)
 
 
 conn.commit()
+# cursor.execute("insert into student values(2020444,'Gaurang','Gajendrabhai','Parmar','2020','9999999999','gaurang@gmail.com')")
+# conn.commit()

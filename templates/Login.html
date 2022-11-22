@@ -1,7 +1,34 @@
 <html>
     <head>
-        <title>Flask app</title>
-        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+
+        <style>  
+          body  {  
+              margin: 0;
+              font-family: Arial, Helvetica, sans-serif;
+              background-image: url("{{url_for('static', filename='images/classroom.jpg')}}");
+              background-color:  black;
+              /* height: 1024px; */
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              position: relative;
+          }  
+          .bottom-onehalf {
+              margin-bottom: 0.5cm;
+          }
+          footer{
+              margin-top: 400px;
+          }
+          #heading{
+            background-color: darkblue;
+          }
+      </style>  
+
+      <title>Student Reward System</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student reward system</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <script>
             function showLogin(id){
                 var buttons=document.getElementById("buttons");
@@ -21,22 +48,31 @@
         </script>
     </head>
     <body>
-        <h1 class="heading" style="text-align: center;">Student reward System</h1>
-        <div id="buttons" style="display: flex;flex-direction: column">
-            <button id="Teacher" onclick="showLogin(this.id)" style="margin: 10px;" >Login As Teacher</button>
-            <button id="TA" onclick="showLogin(this.id)" style="margin: 10px;" >Login As TA</button>
-            <button id="Student" onclick="showLogin(this.id)" style="margin: 10px;" >Login As Student</button>
+        <div class="heading">>
+            <h1 class="heading1" style="text-align: center; color: rgb(19, 19, 22);">Student reward System</h1>
         </div>
-        <div id="login" style="display: none;">
-            <form action="/home" class="container" style="display: flex;flex-direction: column;align-items: center;" metod="POST">
-                <div style="display:flex;flex-direction:column">
-                    <input type="hidden" name = "role" id="role" >
-                    <input name="userid" type = "text" style="margin:10px;" placeholder="UserId" />
-                    <!-- <input name="password" type = "password" style="margin:10px;" placeholder="Password"/> -->
-                </div>
-                <button type="submit">Submit</button>
-            </form>
-            <button onclick="goback()">Go Back</button>
+        <div class="d-grid gap-4 col-4 mx-auto">
+            <div id="buttons" style="display: flex;flex-direction: column">
+                <button class="btn btn-dark"  id="Student" onclick="showLogin(this.id)" style="margin: 10px;" >Student</button>
+                <button class="btn btn-dark" id="Teacher" onclick="showLogin(this.id)" style="margin: 10px;" >Teacher</button>
+                <button class="btn btn-dark"  id="TA" onclick="showLogin(this.id)" style="margin: 10px;" >TA</button>
+                <button class="btn btn-dark"  id="Admin" onclick="showLogin(this.id)" style="margin: 10px;" >Admin</button>
+            </div>
+        
+            <div id="login" style="display: none;">
+                <form action="/home" class="container" style="display: flex;flex-direction: column;align-items: center;" metod="POST">
+                    <div style="display:flex;flex-direction:column">
+                        <input type="hidden" name = "role" id="role" >
+                        <input name="userid" type = "text" style="margin:10px;" placeholder="UserId" required/>
+                        <!-- <input name="password" type = "password" style="margin:10px;" placeholder="Password"/> -->
+                    </div>
+                    <button class="btn btn-danger" type="submit" onclick="return confirm('Correct user id will lead you to the index page, otherswise you will be redirected to home page!')">Submit</button>
+                </form>
+                <button class="btn btn-dark" onclick="goback()">Return</button>
+            </div>
         </div>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+
 </html>

@@ -3,21 +3,79 @@
         <title>
             Student | Update My Info
         </title>
+
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+            body  {  
+              margin: 0;
+              font-family: Arial, Helvetica, sans-serif;
+              background-image:url("{{url_for('static', filename='images/login.jpg')}}");               
+              background-color:  black;
+              /* height: 1024px; */
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              position: relative;
+          }  
+
+            input[type=text], select, textarea {
+              width: 25%;
+              padding: 12px;
+              margin: 15px;
+              margin-left: auto;
+              margin-right: auto;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              resize: vertical;
+              opacity: 1;
+            }
+            
+            label {
+              padding: 12px 12px 12px 0;
+              display: inline-block;
+            }
+            
+            button{
+                background-color: #913e4b;
+                border: none;
+                color: white;
+                padding: 15px 35px;
+                text-align: center;
+                text-decoration:solid;
+                display: inline-block;
+                font-size: 16px;
+                margin: 10px;
+                border-radius: 5px;
+                transition-duration: 0.3s;
+                cursor: pointer;
+            }
+            button:hover {
+                 background-color: white;
+                color: black;
+                border: 2px solid #e7e7e7;
+                }
+            
+            </style>
+
     </head>
     <body>
         <!-- studentData = {{userData}} -->
         <!-- updte my info -->
-        <form id="updateMyInfo" method="POST" action="/student/updetemyinfo#">
-            <!-- <label for="firstName">First name </label> -->
-            <input type="text" name = "firstName" placeholder="First name"/>
-            <input type="text" name = "middleName" placeholder="Middle name"/>
-            <input type="text" name = "lastName" placeholder="Last name"/>
-            <input type="text" name = "Batch" placeholder="2020"/>
-            <input type="text" name = "PhoneNumber" placeholder="9999999999"/>
-            <input type="text" name = "Email" placeholder="xyz@gmail.com"/>
-            <input type="text" name = "uid" style="display:none" value="{{id}}" />
-            <button type = "submit" >save</button>
-            <button type = "button" onclick="history.back(); return false;">cancel</button>
-        </form>
+        <center>
+            <form id="updateMyInfo" method="POST" action="/student/updetemyinfo#">
+                <!-- <label for="firstName">First name </label> -->
+                <input type="text" name = "firstName" placeholder="First name" required/> <br>
+                <input type="text" name = "middleName" placeholder="Middle name" required /> <br>
+                <input type="text" name = "lastName" placeholder="Last name" required /> <br>
+                <input type="text" name = "Batch" placeholder="Student Batch" required /> <br>
+                <input type="text" name = "PhoneNumber" placeholder="phone number" required /> <br>
+                <input type="text" name = "Email" placeholder="xyz@gmail.com" required /> <br>
+                <input type="text" name = "uid" style="display:none" value="{{id}}"/> <br>
+                <button type = "submit" onclick="return confirm('Update completed without error! You can now verify this by clicking the view my profile option!')" >Update</button><br>
+                <button type = "button" onclick="history.back(); return false;">cancel</button><br>
+            </form>
+        </center>
     </body>
 </html>

@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <title>
+            Teacher | Top five students
+        </title>
+
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+            body  {  
+              margin: 0;
+              font-family: Arial, Helvetica, sans-serif;
+              background-image:url("{{url_for('static', filename='images/login.jpg')}}");               
+              background-color:  black;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover;
+              position: relative;
+          }  
+
+            input[type=text], select, textarea {
+              width: 25%;
+              padding: 12px;
+              margin: 15px;
+              margin-left: auto;
+              margin-right: auto;
+              border: 1px solid #ccc;
+              border-radius: 4px;
+              resize: vertical;
+              opacity: 1;
+            }
+            
+            label {
+              padding: 12px 12px 12px 0;
+              display: inline-block;
+            }
+            
+            button{
+                background-color: #913e4b;
+                border: none;
+                color: white;
+                padding: 15px 35px;
+                text-align: center;
+                text-decoration:solid;
+                display: inline-block;
+                font-size: 16px;
+                margin: 10px;
+                border-radius: 5px;
+                transition-duration: 0.3s;
+                cursor: pointer;
+            }
+            button:hover {
+                 background-color: white;
+                color: black;
+                border: 2px solid #e7e7e7;
+                }
+            
+            </style>
+
+
+    </head>
+    <body>
+        <!-- studentData = {{userData}} -->
+        <!-- updte my info -->
+        <center>
+        <form id="updateMyInfo" method="POST" action="/teacher/viewtopfivestudents#">
+            <!-- <label for="firstName">First name </label> -->
+            <input type="text" name = "studentBatch" placeholder="Student Batch" required/><br>
+            <input type="text" name = "uid" style="display:none" value="{{id}}"/>
+            <button type = "submit" >View</button><br>
+            <button type = "button" onclick="history.back(); return false;">cancel</button><br>
+        </form>
+    </center>
+    </body>
+</html>

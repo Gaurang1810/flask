@@ -1,0 +1,116 @@
+<html>
+  <head>
+    <title>Admin</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url("{{url_for('static', filename='images/studentLogin.jpg')}}");
+        background-color: black;
+        /* height: 1024px; */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+      a {
+        display: block;
+        height: 20px;
+        width: 365px;
+        /* background: rgba(5, 5, 106, 0.549); */
+        position: relative;
+        margin: 14px;
+        left: 0;
+        right: 0;
+        bottom: 0px;
+        place-items: center;
+        /* font-family: "Poppins",sans-serif; */
+        font-weight: 500;
+        font-size: 20px;
+        color: rgb(181, 178, 173);
+        text-decoration: none;
+        justify-content: center;
+        text-align: center;
+        padding: 15px;
+        /* padding-top: 25px; */
+        border: solid rgb(181, 174, 174);
+        border-radius: 12px;
+      }
+      user agent stylesheet a:-webkit-any-link {
+        color: -webkit-link;
+        cursor: pointer;
+      }
+      a:hover {
+        background: rgb(181, 174, 174);
+        color: #1c2739;
+        border: solid rgb(181, 174, 174);
+      }
+      button {
+        background-color: #f6f3f3;
+        border: none;
+        color: rgb(15, 12, 82);
+        position: relative;
+        padding: 15px 35px;
+        text-align: center;
+        text-decoration: solid;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px;
+        border-radius: 5px;
+        transition-duration: 0.3s;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: rgb(15, 12, 82);
+        color: #f6f3f3;
+        border: 2px solid #e7e7e7;
+      }
+      #menu {
+        width: 50vw;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- {% set x=userData.__setitem__("key", "value") %} -->
+    <!-- {{userData["id"]}}
+        studentData = {{userData}} -->
+    <!-- updte my info -->
+
+    <div id="menu">
+      <a href='/admin/insertnewstudent?id={{userData["id"]}}'
+        >Insert new student</a
+      >
+      <a href='/admin/insertnewfaculty?id={{userData["id"]}}'
+        >Insert new faculty</a
+      >
+      <a href='/admin/insertnewcourse?id={{userData["id"]}}'
+        >Insert new course</a
+      >
+      <a href='/admin/insertnewtakes?id={{userData["id"]}}'
+        >Insert student's new takes</a
+      >
+      <a href='/admin/deletestudent?id={{userData["id"]}}'>Delete student</a>
+      <a href='/admin/deletefaculty?id={{userData["id"]}}'>Delete faculty</a>
+      <a href='/admin/deletecourse?id={{userData["id"]}}'>Delete course</a>
+      <a href='/admin/deletetakes?id={{userData["id"]}}'
+        >Delete student's takes</a
+      >
+      <!-- <a href='/student/viewtopfivestudents?id={{userData["id"]}}' >View top 5 students</a> -->
+      <!-- <button type = "button">View academic marks</button> -->
+      <!-- <button type = "button">View non-academic marks</button> -->
+      <!-- <button type = "button">See top 5 students</button> -->
+    </div>
+    <div>
+      <center>
+        <button type="button" onclick="history.back(); return false;">
+          Back</button
+        ><br />
+      </center>
+    </div>
+  </body>
+</html>
