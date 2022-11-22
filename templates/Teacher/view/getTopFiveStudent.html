@@ -112,7 +112,7 @@
               fields.forEach((td) => {
                 if(!isNaN(row[td]))
                   {
-                    row[td] = row[td].toFixed(2);
+                    row[td] = math.round(row[td]*100)/100;
                   }
                 tablerow += `<td>${row[td]}</td>`;
               });
