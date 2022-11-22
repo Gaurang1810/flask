@@ -46,7 +46,7 @@ def isUser():
         else:
             return redirect("/")
 
-@app.route('/student/updetemyinfo',methods=['GET', 'POST'])
+@app.route('/student/updatemyinfo',methods=['GET', 'POST'])
 def student_updateMyInfo():
     if request.method=="POST":
         print("###############in Route function########################")
@@ -122,7 +122,7 @@ def student_getTopFiveStudents():
     return topFiveStudents
 
 # route for teacher -> update my info
-@app.route('/teacher/updetemyinfo',methods=['GET', 'POST'])
+@app.route('/teacher/updatemyinfo',methods=['GET', 'POST'])
 def teacher_updateMyInfo():
     if request.method=="POST":
         print("###############in Route function########################")
