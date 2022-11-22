@@ -1,0 +1,124 @@
+<html>
+  <head>
+    <title>Student | view NonAcademic Marks</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url("{{url_for('static', filename='images/blackBoard.jpg')}}");
+        background-color: black;
+        /* height: 1024px; */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+      }
+      .table {
+        background-color: #ffffff;
+        border-collapse: collapse;
+        margin: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1em;
+        min-width: 400px;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 20px 20px rgba(0, 0, 0, 0.227);
+      }
+
+      .table thead tr {
+        background-color: #b0d7ce;
+        color: #ffffff;
+        text-align: left;
+        font-weight: bold;
+      }
+      .table th,
+      .table td {
+        padding: 14px 20px;
+      }
+
+      .table tbody tr {
+        border-bottom: 1px solid #dedddf;
+      }
+
+      button {
+        background-color: #8f010a; /* Green */
+        border: none;
+        color: white;
+        padding: 15px 50px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        margin: 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius: 12px;
+      }
+      button:hover {
+        background-color: white;
+        color: black;
+        border: 2px solid #e7e7e7;
+      }
+
+      .table tbody tr:first-child td {
+        color: #b2b5b9;
+        background-color: #333c43;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- studentData = {{userData}} -->
+    <!-- updte my info -->
+    <div id="viewNonAcademicMarks">
+      <table class="table"></table>
+
+      <center>
+        <button type="button" onclick="history.back(); return false;">
+          Back
+        </button>
+      </center>
+    </div>
+  </body>
+  <script>
+    let ip = window.location.host;
+    // let port = window.location.port;
+    let pro = window.location.protocol;
+    fetch(`${pro}//${ip}/student/getnonacademicmarks`)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        // console.log(data);
+        let head = data[0];
+        var fields = [];
+        for (let i in head) fields.push(i);
+        console.log(fields);
+        var tablerow = ``;
+        fields.forEach((td) => {
+          tablerow += `<th>${td}</th>`;
+        });
+        document.querySelector(".table").innerHTML += `<tr>
+                                                            ${tablerow}
+                                                            </tr>`;
+
+        data.forEach((row) => {
+          console.log(row);
+          var tablerow = ``;
+          for (let i in row) console.log(i);
+          var fields = [];
+          for (let i in row) fields.push(i);
+          console.log(fields);
+
+          fields.forEach((td) => {
+            tablerow += `<td>${row[td]}</td>`;
+          });
+
+          document.querySelector(".table").innerHTML += `<tr>
+                                                            ${tablerow}
+                                                            </tr>`;
+        });
+      });
+  </script>
+</html>
