@@ -46,7 +46,7 @@ def isUser():
         else:
             return redirect("/")
 
-@app.route('/student/updatemyinfo',methods=['GET', 'POST'])
+@app.route('/student/updatestudentinfo',methods=['GET', 'POST'])
 def student_updateMyInfo():
     if request.method=="POST":
         print("###############in Route function########################")
@@ -64,7 +64,7 @@ def student_updateMyInfo():
 
     elif request.method=="GET":
         print(request.args)
-        return render_template("Student/view/updateMyinfo.html" , id = request.args["id"])
+        return render_template("Student/view/updateStudentInfo.html" , id = request.args["id"])
 
 # route for student -> viewAcademicMarkStudent
 @app.route('/student/viewacademicmarks')
@@ -122,7 +122,7 @@ def student_getTopFiveStudents():
     return topFiveStudents
 
 # route for teacher -> update my info
-@app.route('/teacher/updatemyinfo',methods=['GET', 'POST'])
+@app.route('/teacher/updateteacherinfo',methods=['GET', 'POST'])
 def teacher_updateMyInfo():
     if request.method=="POST":
         print("###############in Route function########################")
@@ -140,7 +140,7 @@ def teacher_updateMyInfo():
 
     elif request.method=="GET":
         print(request.args)
-        return render_template("Teacher/view/updateMyinfo.html" , id = request.args["id"])
+        return render_template("Teacher/view/updateTeacherInfo.html" , id = request.args["id"])
 
 # route for teacher -> update studentyt marks
 @app.route('/teacher/updatestudentacademicmark',methods=['GET', 'POST'])
