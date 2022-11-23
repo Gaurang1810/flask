@@ -20,7 +20,7 @@
               position: relative;
           }  
 
-            input[type=text], select, textarea {
+            input, select, textarea {
               width: 25%;
               padding: 12px;
               margin: 15px;
@@ -68,7 +68,7 @@
             <!-- <label for="firstName">First name </label> -->
             <input type="text" name = "studentID" placeholder="Student ID" required/><br>
             <input type="text" name = "uid" style="display:none" value="{{id}}"/>
-            <button type = "submit" onclick="return confirm('You will be routed to the index page if deletion is successful; else, you will remain on this page only.'")>Delete</button><br>
+            <button type = "submit" onclick="return confirm('You will be routed to the index page if deletion is successful; else, you will remain on this page only.')">Delete</button><br>
             <button type = "button" onclick="history.back(); return false;">cancel</button>
         </form>
     </center>
