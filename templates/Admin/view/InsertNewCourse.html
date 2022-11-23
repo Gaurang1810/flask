@@ -66,7 +66,7 @@
         <center>
         <form id="updateMyInfo" method="POST" action="/admin/insertnewcourse#">
             <!-- <label for="firstName">First name </label> -->
-            <input type="text" name = "courseID" placeholder="Course ID" required/><br>
+            <input type="text" name = "courseID" placeholder="Course ID"title="Error Message" pattern="[1-9]{1}[0-9]{3}" required/><br>
             <input type="text" name = "courseName" placeholder="course Name" required /><br>
             <input type="text" name = "facultyID" placeholder="faculty ID" required/><br>
             <input type="text" name = "uid" style="display:none" value="{{id}}"/><br>

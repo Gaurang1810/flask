@@ -20,7 +20,7 @@
               position: relative;
           }  
 
-            input[type=text], select, textarea {
+            input, select, textarea {
               width: 25%;
               padding: 12px;
               margin: 15px;
@@ -66,13 +66,13 @@
         <center>
         <form id="updateStudentAcademicMarks" method="POST" action="/teacher/updatestudentacademicmark#">
             <!-- <label for="firstName">First name </label> -->
-            <input type="text" name = "studentID"  placeholder="student ID" required  /><br>
-            <input type="text" name = "subjectID"  placeholder="subject ID" required /><br>
-            <input type="text" name = "examMarks" min="0" max="100" placeholder="exam Marks" required /><br>
-            <input type="text" name = "practicalMarks" min="0" max="100" placeholder="practical Marks" required /><br>
-            <input type="text" name = "projectMarks" min="0" max="100" placeholder="project Marks" required /><br>
-            <input type="text" name = "quizzesMarks" min="0" max="100" placeholder="quizzes Marks" required /><br>
-            <input type="text" name = "attendenceMarks" min="0" max="100" placeholder="attendence Marks" required /><br>
+            <input type="text" name = "studentID"  placeholder="student ID" title="Error Message" pattern="[2]{1}[0-9]{6}"required  /><br>
+            <input type="text" name = "subjectID"  placeholder="subject ID" title="Error Message" pattern="[1-9]{1}[0-9]{3}" required /><br>
+            <input type="number" name = "examMarks" min="0" max="100" placeholder="exam Marks" required /><br>
+            <input type="number" name = "practicalMarks" min="0" max="100" placeholder="practical Marks" required /><br>
+            <input type="number" name = "projectMarks" min="0" max="100" placeholder="project Marks" required /><br>
+            <input type="number" name = "quizzesMarks" min="0" max="100" placeholder="quizzes Marks" required /><br>
+            <input type="number" name = "attendenceMarks" min="0" max="100" placeholder="attendence Marks" required /><br>
             <input type="text" name = "uid" style="display:none" value="{{id}}" required  /><br>
             <button type = "submit" onclick="return comnfirm('If the information you entered is valid, the update will be successful, and you will be sent to the index page; otherwise, you will stay on the current page!')" >update</button><br>
             <button type = "button" onclick="history.back(); return false;">cancel</button>

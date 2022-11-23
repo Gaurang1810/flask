@@ -20,7 +20,7 @@
               position: relative;
           }  
 
-            input[type=text], select, textarea {
+            input, select, textarea {
               width: 25%;
               padding: 12px;
               margin: 15px;
@@ -70,8 +70,8 @@
             <input type="text" name = "middleName" placeholder="Middle name"  required /><br>
             <input type="text" name = "lastName" placeholder="Last name"  required /><br>
             <input type="text" name = "Address" placeholder="city name"  required /><br>
-            <input type="text" name = "PhoneNumber" placeholder="phone number"  required /><br>
-            <input type="text" name = "Email" placeholder="xyz@gmail.com"  required /><br>
+            <input type="text" name = "PhoneNumber" placeholder="phone number" title="Error Message" pattern="[1-9]{1}[0-9]{9}" required /><br>
+            <input type="email" name = "Email" placeholder="xyz@gmail.com"  required /><br>
             <input type="text" name = "uid" style="display:none" value="{{id}}" /><br>
             <button type = "submit" onclick="return confirm('Update completed without error! You can now verify this by clicking the view my profile option!')"  >Update</button><br>
             <button type = "button" onclick="history.back(); return false;">cancel</button><br>
